@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>글쓰기</h1>
-    <form action="/write" method="post">
+    <form action="/write" method="post" >
         <div><input type = "text" name="title" placeholder="제목"></div>
         <div>
             <textarea name = "ctnt" placeholder="내용"></textarea>
@@ -17,8 +17,12 @@
         <div>
             <input type="submit" value="저장">
             <input type="reset" value="초기화">
+
         </div>
     </form>
+
+
+
 
 </body>
 </html>

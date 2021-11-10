@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DbUtils {
     public static Connection getCon() throws Exception {
-        final String URL = "jdbc:mysql://localhost:3308/test";
+        final String URL = "jdbc:mysql://localhost:3308/table";
         final String USERNAME = "root";
         final String PASSWORD = "koreait";
         Class.forName("com.mysql.cj.jdbc.Driver");

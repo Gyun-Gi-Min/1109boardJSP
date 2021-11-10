@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/detail")
-public class BoardDetailServlet extends HttpServlet {
+@WebServlet("/del")
+public class BoardDelServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String strIboard = req.getParameter("iboard");
+        System.out.println("strIboard : " + strIboard);
         int iboard = Integer.parseInt(strIboard);
 
-        BoardVO param = new BoardVO();
-        param.setIboard(iboard);
-        BoardVO data = BoardDAO.selBoardDetail(param);
-
-        req.setAttribute("bbb", data);
-
-        String path = "/WEB-INF/jsp/detail.jsp";
-        req.getRequestDispatcher(path).forward(req, res);
+        int result = BoardDAO.delBoard(iboard);
+        switch (result) {
+            case 1:
+                res.sendRedirect("/list");
+                break;
+        }
     }
 }
